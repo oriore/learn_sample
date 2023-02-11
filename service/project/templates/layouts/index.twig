@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        .header {
+            text-align: center;
+            background-color: #aaa;
+            padding: 16px 24px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .page {
+            margin: 10px
+        }
+        body {
+            margin: 0px
+        }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">{% block header_title %}{% endblock %}</header>
+      <div class="page">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

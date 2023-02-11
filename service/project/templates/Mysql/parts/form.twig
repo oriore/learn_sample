@@ -1,0 +1,12 @@
+{% set name = '' %}
+{% if form_input is not null %}
+{% set name = attribute(form_input, 'getName') %}
+{% endif %}
+
+<form class='' method="post" action="">
+  <div class="form">
+    <label>名前で検索</label>
+    <input type="text" id="name" name="name" value="{{ name }}">
+    <input type="submit" value="検索する">
+  </div>
+</form>

@@ -1,0 +1,20 @@
+{% extends 'layouts/index.twig' %}
+
+{% block title %}Home{% endblock %}
+{% block header_title %}index{% endblock %}
+
+{% block content %}
+  <h1>氏名検索</h1>
+  {{ include('Mysql/parts/form.twig', {'form_input': form_input}) }}
+
+  {% if users is defined and users|length > 0 %}
+    <div>
+      <ul>
+        {% for user in users %}
+          <li>id: {{ user.id }}, name:{{ user.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endblock %}
+
