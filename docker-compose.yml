@@ -1,0 +1,27 @@
+version: '3'
+
+services :
+  app:
+    build:
+        context: ./docker-app/
+        dockerfile: Dockerfile
+    volumes:
+        - ./service:/var/www/html/service
+    command: sh -c "/var/www/html/init.sh && apache2-foreground"
+    ports:
+        - '8081:80'
+    links:
+      - db:db
+    env_file:
+      ./docker-app/php/.env_dev
+    tty: true
+    stdin_open: true
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - ./docker-app/mysql/conf.d:/etc/mysql/conf.d
+    env_file:
+      ./docker-app/mysql/.env_db
+    ports:
+      - '3306:3306'
