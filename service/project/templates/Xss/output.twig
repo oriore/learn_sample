@@ -1,0 +1,12 @@
+{% extends 'layouts/index.twig' %}
+
+{% block title %}output{% endblock %}
+{% block header_title %}output{% endblock %}
+
+{% block content %}
+  <h1>入力内容を表示します</h1>
+  {# twigの設定でデフォルトでエスケープされてしまうようなので、入力をそのまま表示するrawオプションをとりあえず使ってる... #}
+  <p>{{ input | raw }}</p> 
+  <a href="/xss">戻る</a>
+{% endblock %}
+
