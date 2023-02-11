@@ -21,6 +21,7 @@ services :
     image: mysql:5.7
     volumes:
       - ./docker-app/mysql/conf.d:/etc/mysql/conf.d
+      - ./docker-app/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     env_file:
       ./docker-app/mysql/.env_db
     ports:
