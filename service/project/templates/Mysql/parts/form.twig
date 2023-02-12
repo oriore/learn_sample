@@ -5,8 +5,9 @@
 
 <form class='' method="post" action="">
   <div class="form">
-    <label>名前で検索</label>
-    <input type="text" id="name" name="name" value="{{ name }}">
+    <div><label>名前で検索</label></div>
+
+    <textarea name="name" rows="5" cols="60">{{ name }}</textarea>
     <input type="submit" value="検索する">
   </div>
 </form>
