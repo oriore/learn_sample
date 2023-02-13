@@ -19,6 +19,7 @@ class XssController
 
     public function index(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
+        setcookie('TEST_VALUE', '1');
         return $this->twig->render($response, 'Xss/index.twig');
     }
 
@@ -39,7 +40,8 @@ class XssController
 
     public function fix(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
-        // indexと同じs
+        // indexと同じ
+        setcookie('TEST_VALUE', '2');
         return $this->twig->render($response, 'Xss/index.twig');
     }
 
