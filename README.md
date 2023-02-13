@@ -7,6 +7,10 @@ docker-compose up -d
 ## URL
 ### sqlインジェクションの確認
 初期作成されるuserテーブルに対して部分一致検索を行うだけのフォーム画面があります。
+
+```
+test1%' OR TRUE OR 1 = '
+```
 ```
 ・sqlインジェクションが起きるURL
 http://localhost:8081/mysql/
